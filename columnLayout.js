@@ -7,6 +7,10 @@ var margin = 20;
 var colCount = 0;
 var start = 0;
 
+/* 
+ This is count block function. The main task of this function to decide
+ how many block will be needed.
+*/
 var countBlock = function(){
 	// console.log(1);
 	wrapperWidth = $('.wrapper').outerWidth();
@@ -38,6 +42,10 @@ var countBlock = function(){
 	// console.log(blocks);
 	setBlocks();
 }
+
+/* 
+ Main task of this function is to set the block properly
+*/
 
 var setBlocks = function(){
 	$('.qsb').each(function(){

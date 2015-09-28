@@ -1,3 +1,9 @@
+/*
+* File : ColumnLayout JS
+* @author : Harsh Kothari
+* 
+*/
+
 var wrapperWidth = 0;
 var qsbWidth = 0; 
 var blocks = [];

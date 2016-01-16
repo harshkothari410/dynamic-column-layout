@@ -2,6 +2,8 @@
 * File : ColumnLayout JS
 * @author : Harsh Kothari
 * 
+* Editted by : Dishant Chavda
+* date : 11-01-2016
 */
 
 var wrapperWidth = 0;
@@ -18,21 +20,17 @@ var start = 0;
  how many block will be needed.
 */
 var countBlock = function(){
-	// console.log(1);
 	wrapperWidth = $('.wrapper').outerWidth();
 	qsbWidth = $('.qsb').outerWidth();
 	colCount = Math.floor( wrapperWidth/(qsbWidth + margin) );
-	// alert(wrapperWidth + ',' + qsbWidth + ',' + colCount);
 
 	// Find middle point
 	var middleWidth = $(window).width() / 2;
 	console.log(middleWidth);
 	// Find even or odd Block
-	var oddEven = 0; // For odd = 0 and even = 1 
-	if( colCount % 2 == 0 )
-		oddEven = 1;
+	var isEven = colCount % 2 == 0;
 
-	if(oddEven){
+	if(isEven){
 		var half = colCount / 2;
 		start = ( margin / 2 ) + ( half * ( qsbWidth + margin ) ) - margin;
 		start = middleWidth - start;
@@ -45,8 +43,11 @@ var countBlock = function(){
 
 	for( var i = 0; i < colCount; i++ )
 		blocks[i] = 60;
-	// console.log(blocks);
+	// set blocks according to x and y coordinated calculated
 	setBlocks();
+	// get height of the parent div and than set it so it do not collapse and hide other divs bellow it.
+	var wrapperHeight = Math.max.apply(Math, blocks);
+	$(".wrapper").css("height",wrapperHeight + 'px');
 }
 
 /* 

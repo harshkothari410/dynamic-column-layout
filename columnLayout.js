@@ -26,7 +26,7 @@ var countBlock = function(){
 
 	// Find middle point
 	var middleWidth = $(window).width() / 2;
-	console.log(middleWidth);
+
 	// Find even or odd Block
 	var isEven = colCount % 2 == 0;
 
@@ -41,8 +41,11 @@ var countBlock = function(){
 		start = middleWidth - start;
 	}
 
+	// This default value sets top space from where this block starts $('.navbar') is the selecter to select top element
+	var topEle = parseInt($('.navbar').css('height'), 10) + parseInt($('.wrapper').css('margin-top'), 10);
+	console.log(topEle);
 	for( var i = 0; i < colCount; i++ )
-		blocks[i] = 60;
+		blocks[i] = topEle;
 	// set blocks according to x and y coordinated calculated
 	setBlocks();
 	// get height of the parent div and than set it so it do not collapse and hide other divs bellow it.

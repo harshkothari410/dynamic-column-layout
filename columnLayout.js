@@ -2,7 +2,7 @@
 * File : ColumnLayout JS
 * @author : Harsh Kothari
 * 
-* Editted by : Dishant Chavda
+* Edited by : Dishant Chavda
 * date : 11-01-2016
 */
 
